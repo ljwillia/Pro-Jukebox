@@ -2,17 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/player_background">
+    android:background="#4a4a4a">
     
     <!--  Player Header -->
     <LinearLayout
         android:id="@+id/player_header_bg"
         android:layout_width="fill_parent"
         android:layout_height="60dip"
-        android:background="@layout/bg_player_header"
+		android:background="@layout/bg_player_header"
         android:layout_alignParentTop="true"
         android:paddingLeft="5dp"
-        android:paddingRight="5dp">
+        android:paddingRight="5dp" >
         
         <!-- Song Title -->
         <TextView

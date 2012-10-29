@@ -34,7 +34,7 @@ public class ProJb extends Activity implements OnCompletionListener, SeekBar.OnS
 	// Media Player
 	private MediaPlayer mp;
 	// Handler to update UI timer, progress bar etc,.
-	private Handler mHandler = new Handler ();;
+	private Handler mHandler = new Handler();;
 	private SongsManager songManager;
 	private Utilities utils;
 	private int seekForwardTime = 5000; // 5000 milliseconds
@@ -109,10 +109,10 @@ public class ProJb extends Activity implements OnCompletionListener, SeekBar.OnS
 		 * Forward button click event
 		 * Forwards song specified seconds
 		 */
-		btnForward.setOnClickListener (new View.OnClickListener() {
+		btnForward.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public void onClick(view arg0) {
+			public void onClick(View arg0) {
 				//get current song position
 				int currentPosition = mp.getCurrentPosition();
 				//check if seekForward time is lesser than song duration
@@ -220,7 +220,7 @@ public class ProJb extends Activity implements OnCompletionListener, SeekBar.OnS
 		btnShuffle.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public void onClick(View arg0) {
+			public void onClick(View arg0){
 				if(isShuffle){
 					isShuffle = false;
 					Toast.makeText(getApplicationContext(), "Shuffle is OFF", Toast.LENGTH_SHORT).show();
@@ -239,10 +239,10 @@ public class ProJb extends Activity implements OnCompletionListener, SeekBar.OnS
 		 * Button Click event for playlist click event
 		 * Launches list activity which displays lists of songs
 		 */
-		btnPlaylist.setOnClickListener(new View.OnClickListener(){
+		btnPlaylist.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public void OnClick(View arg0) {
+			public void onClick(View arg0) {
 				Intent i = new Intent(getApplicationContext(), PlayListActivity.class);
 				startActivityForResult(i, 100);
 			}
@@ -271,9 +271,9 @@ public class ProJb extends Activity implements OnCompletionListener, SeekBar.OnS
 	 */
 	public void playSong(int songIndex){
 		//Play Song
-		try{
+		try {
 			mp.reset();
-			mp.setDataSource(SongsList.get(songIndex).get("songPath"));
+			mp.setDataSource(songsList.get(songIndex).get("songPath"));
 			mp.prepare();
 			mp.start();
 			//Displaying song's title
@@ -285,7 +285,7 @@ public class ProJb extends Activity implements OnCompletionListener, SeekBar.OnS
 			
 			//set progress bar values
 			songProgressBar.setProgress(0);
-			songProgressbar.setMax(100);
+			songProgressBar.setMax(100);
 			
 			//updating progress bar
 			updateProgressBar();			
